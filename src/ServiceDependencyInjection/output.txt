@@ -1,0 +1,14 @@
+2020-07-07 18:36:36,392 DEBUG AppBlocks.Autofac.Common.AppBlocksContainerBuilder - Registering Logging Interceptor
+2020-07-07 18:36:36,412 DEBUG AppBlocks.Autofac.Common.AppBlocksContainerBuilder - Registering Validation Interceptor
+2020-07-07 18:36:36,412 DEBUG AppBlocks.Autofac.Common.AppBlocksContainerBuilder - Registering Workflow Interceptor
+2020-07-07 18:36:36,420 DEBUG AppBlocks.Autofac.Common.AppBlocksContainerBuilder - Registering AppBlocks.Autofac.Interceptors.Placeholders.ClassLoggerPlaceholder as keyed service of type AppBlocks.Autofac.Common.IClassLogger with key **
+2020-07-07 18:36:36,424 DEBUG AppBlocks.Autofac.Common.AppBlocksContainerBuilder - Registering AppBlocks.Autofac.Interceptors.Placeholders.ClassValidatorPlaceholder as keyed service of type AppBlocks.Autofac.Common.IClassValidator with key **
+2020-07-07 18:36:36,424 DEBUG AppBlocks.Autofac.Common.AppBlocksContainerBuilder - Registering AppBlocks.Autofac.Interceptors.Placeholders.ClassWorkflowWritePlaceholder as keyed service of type AppBlocks.Autofac.Common.IWorkflowWriter with key **
+2020-07-07 18:36:36,425 DEBUG AppBlocks.Autofac.Common.AppBlocksContainerBuilder - Registering AppBlocks.Autofac.Examples.ServiceDependencyInjection.Service1 as implemented interfaces
+2020-07-07 18:36:36,430 DEBUG AppBlocks.Autofac.Common.AppBlocksContainerBuilder - Registering AppBlocks.Autofac.Examples.ServiceDependencyInjection.Service2 as implemented interfaces
+2020-07-07 18:36:36,696 INFO AppBlocks.Autofac.Interceptors.LoggingInterceptor - Logging Interceptor: Calling AppBlocks.Autofac.Examples.ServiceDependencyInjection.Service1.RunService1 with parameters System.Char[]
+2020-07-07 18:36:36,697 DEBUG AppBlocks.Autofac.Examples.ServiceDependencyInjection.Service1 - Executing service method RunService1
+2020-07-07 18:36:36,698 INFO AppBlocks.Autofac.Interceptors.LoggingInterceptor - Logging Interceptor: Calling AppBlocks.Autofac.Examples.ServiceDependencyInjection.Service2.RunService2 with parameters System.Char[]
+2020-07-07 18:36:36,698 DEBUG AppBlocks.Autofac.Examples.ServiceDependencyInjection.Service2 - Executing service method RunService2
+2020-07-07 18:36:36,699 INFO AppBlocks.Autofac.Interceptors.LoggingInterceptor - Logging Interceptor: Finished AppBlocks.Autofac.Examples.ServiceDependencyInjection.Service2.RunService2. Returned 
+2020-07-07 18:36:36,699 INFO AppBlocks.Autofac.Interceptors.LoggingInterceptor - Logging Interceptor: Finished AppBlocks.Autofac.Examples.ServiceDependencyInjection.Service1.RunService1. Returned 
