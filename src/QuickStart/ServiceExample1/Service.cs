@@ -15,7 +15,7 @@ namespace QuickStart.ServiceExample1
 
         public void Run()
         {
-            if (logger.IsDebugEnabled) logger.Debug($"{nameof(Service)} run successful");
+            if (logger.IsDebugEnabled) logger.Debug($"{nameof(Service)} Run() called");
         }
     }
 }
