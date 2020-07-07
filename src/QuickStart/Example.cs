@@ -1,6 +1,6 @@
 ﻿using Autofac;
 
-namespace QuickStart.ServiceExample1
+namespace AppBlocks.Autofac.Examples.QuickStart
 {
     class Example
     {

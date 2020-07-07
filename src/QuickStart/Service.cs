@@ -1,11 +1,8 @@
 ﻿using AppBlocks.Autofac.Support;
 using log4net;
-using System;
-using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
 
-namespace QuickStart.ServiceExample1
+namespace AppBlocks.Autofac.Examples.QuickStart
 {
     [AppBlocksService]
     public class Service : IService

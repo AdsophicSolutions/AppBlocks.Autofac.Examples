@@ -1,10 +1,9 @@
 ﻿using log4net;
 using log4net.Config;
-using System;
 using System.IO;
 using System.Reflection;
 
-namespace QuickStart
+namespace AppBlocks.Autofac.Examples.QuickStart
 {
     class Program
     {
@@ -18,7 +17,7 @@ namespace QuickStart
 
         private static void RunServiceExample1()
         {
-            new ServiceExample1.Example().Run();
+            new Example().Run();
         }
     }
 }

@@ -1,10 +1,7 @@
 ﻿using AppBlocks.Autofac.Common;
 using Autofac;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace QuickStart.ServiceExample1
+namespace AppBlocks.Autofac.Examples.QuickStart
 {
     internal class ApplicationContainerBuilder : AppBlocksContainerBuilder
     {
