@@ -4,7 +4,12 @@ using System.Reflection;
 
 namespace AppBlocks.Autofac.Examples.ValidatorAndWorkflowWriter
 {
-    [AppBlocksService]
+    [AppBlocksService(Name:"",
+        ServiceType:null,
+        ServiceScope:EnumAppBlocksInstanceLifetime.InstancePerLifetimeScope,
+        Interceptors: new[] { AppBlocksInterceptorConstants.Logging, AppBlocksInterceptorConstants.Validation },
+        Workflows: new[] { "Application" },
+        IsKeyed: false)]
     public class Service : IService
     {
         private static readonly ILog logger =
