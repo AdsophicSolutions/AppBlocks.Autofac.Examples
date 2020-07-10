@@ -12,6 +12,9 @@ namespace AppBlocks.Autofac.Examples.CustomServiceLogger
             using var scope = autofacContainer.BeginLifetimeScope();
             var service = scope.Resolve<IService>();
             service.Run();
+
+            var asyncService = scope.Resolve<IAsyncService>();
+            asyncService.Run();
         }
     }
 }
