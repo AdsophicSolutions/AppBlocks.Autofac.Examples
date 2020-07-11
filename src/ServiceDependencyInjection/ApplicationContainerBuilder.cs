@@ -8,6 +8,8 @@ namespace AppBlocks.Autofac.Examples.ServiceDependencyInjection
 {
     internal class ApplicationContainerBuilder : AppBlocksContainerBuilder
     {
+        public ApplicationContainerBuilder() : base(AppBlocksApplicationMode.Live) { }
+
         protected override void RegisterAssemblyServices(ContainerBuilder builder)
         {
             RegisterAssembly(typeof(ApplicationContainerBuilder).Assembly, builder);

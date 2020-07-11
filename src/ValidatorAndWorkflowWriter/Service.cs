@@ -6,7 +6,7 @@ namespace AppBlocks.Autofac.Examples.ValidatorAndWorkflowWriter
 {
     [AppBlocksService(Name:"",
         ServiceType:null,
-        ServiceScope:EnumAppBlocksInstanceLifetime.InstancePerLifetimeScope,
+        ServiceScope:AppBlocksInstanceLifetime.InstancePerLifetimeScope,
         Interceptors: new[] { AppBlocksInterceptorConstants.Logging, AppBlocksInterceptorConstants.Validation },
         Workflows: new[] { "Application" },
         IsKeyed: false)]
