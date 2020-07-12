@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomServiceLogger", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidatorAndWorkflowWriter", "src\ValidatorAndWorkflowWriter\ValidatorAndWorkflowWriter.csproj", "{1370359C-77E3-4F7A-BBF0-41E141AF91D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistrationControl", "src\RegistrationControl\RegistrationControl.csproj", "{BFD1573D-A480-411B-AB7A-44F21FADBF15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistrationControl", "src\RegistrationControl\RegistrationControl.csproj", "{BFD1573D-A480-411B-AB7A-44F21FADBF15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyedAndNamed", "src\KeyedAndNamed\KeyedAndNamed.csproj", "{7B36D947-79D3-4F8E-8402-F6B413F9581C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{BFD1573D-A480-411B-AB7A-44F21FADBF15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFD1573D-A480-411B-AB7A-44F21FADBF15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFD1573D-A480-411B-AB7A-44F21FADBF15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B36D947-79D3-4F8E-8402-F6B413F9581C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B36D947-79D3-4F8E-8402-F6B413F9581C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B36D947-79D3-4F8E-8402-F6B413F9581C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B36D947-79D3-4F8E-8402-F6B413F9581C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
