@@ -15,7 +15,8 @@ namespace AppBlocks.Autofac.Examples.RegistrationControl
             base.RegisterAssemblyServices(builder);
         }
 
-        protected override bool ShouldRegisterService(Type type, AppBlocksServiceAttribute serviceAttribute)
+        protected override bool ShouldRegisterService(Type type, 
+            AppBlocksServiceAttributeBase serviceAttribute)
         {
             if (type.FullName == "AppBlocks.Autofac.Examples.RegistrationControl.FilteredOutService") 
                 return false;
