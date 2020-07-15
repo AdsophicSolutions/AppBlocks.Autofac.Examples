@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyedAndNamed", "src\KeyedA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationContext", "src\ApplicationContext\ApplicationContext.csproj", "{59ECD724-7F63-4A6D-9F74-538E51B83999}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatRSupport", "src\MediatRSupport\MediatRSupport.csproj", "{FA187234-D8E2-43F5-BF78-8F1317328AF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{59ECD724-7F63-4A6D-9F74-538E51B83999}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59ECD724-7F63-4A6D-9F74-538E51B83999}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59ECD724-7F63-4A6D-9F74-538E51B83999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA187234-D8E2-43F5-BF78-8F1317328AF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA187234-D8E2-43F5-BF78-8F1317328AF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA187234-D8E2-43F5-BF78-8F1317328AF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA187234-D8E2-43F5-BF78-8F1317328AF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
