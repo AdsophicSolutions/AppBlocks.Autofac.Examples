@@ -10,7 +10,6 @@ namespace AppBlocks.Autofac.Examples.MediatRSupport
         protected override void RegisterAssemblyServices(ContainerBuilder builder)
         {
             RegisterAssembly(typeof(ApplicationContainerBuilder).Assembly, builder);
-            base.RegisterAssemblyServices(builder);
         }
     }
 }

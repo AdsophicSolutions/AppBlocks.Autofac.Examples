@@ -15,7 +15,7 @@ namespace AppBlocks.Autofac.Examples.ApplicationContext
             : base(new ApplicationConfiguration("appsettings.json"),
                   AppBlocksApplicationMode.Live) { }
 
-        protected override void RegisterGlobalServices(
+        protected override void RegisterExternalServices(
             ContainerBuilder builder, 
             IContext applicationContext)
         {
@@ -27,13 +27,12 @@ namespace AppBlocks.Autofac.Examples.ApplicationContext
 
             applicationContext["appKey3"] = "appValue3";
 
-            base.RegisterGlobalServices(builder, applicationContext);
+            base.RegisterExternalServices(builder, applicationContext);
         }
 
         protected override void RegisterAssemblyServices(ContainerBuilder builder)
         {
             RegisterAssembly(typeof(ApplicationContainerBuilder).Assembly, builder);
-            base.RegisterAssemblyServices(builder);
         }
     }
 }

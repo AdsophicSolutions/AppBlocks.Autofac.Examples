@@ -12,7 +12,6 @@ namespace AppBlocks.Autofac.Examples.RegistrationControl
         protected override void RegisterAssemblyServices(ContainerBuilder builder)
         {
             RegisterAssembly(typeof(ApplicationContainerBuilder).Assembly, builder);
-            base.RegisterAssemblyServices(builder);
         }
 
         protected override bool ShouldRegisterService(Type type, 

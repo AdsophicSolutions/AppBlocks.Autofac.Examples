@@ -10,7 +10,6 @@ namespace AppBlocks.Autofac.Examples.KeyedAndNamed
         protected override void RegisterAssemblyServices(ContainerBuilder builder)
         {
             RegisterAssembly(typeof(ApplicationContainerBuilder).Assembly, builder);
-            base.RegisterAssemblyServices(builder);
         }
     }
 }

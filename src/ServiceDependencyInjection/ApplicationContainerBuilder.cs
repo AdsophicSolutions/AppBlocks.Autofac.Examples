@@ -13,7 +13,6 @@ namespace AppBlocks.Autofac.Examples.ServiceDependencyInjection
         protected override void RegisterAssemblyServices(ContainerBuilder builder)
         {
             RegisterAssembly(typeof(ApplicationContainerBuilder).Assembly, builder);
-            base.RegisterAssemblyServices(builder);
         }
     }
 }
