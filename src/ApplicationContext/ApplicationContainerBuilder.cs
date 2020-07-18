@@ -16,18 +16,17 @@ namespace AppBlocks.Autofac.Examples.ApplicationContext
                   AppBlocksApplicationMode.Live) { }
 
         protected override void RegisterExternalServices(
-            ContainerBuilder builder, 
-            IContext applicationContext)
+            ContainerBuilder builder)
         {
             if(logger.IsInfoEnabled)
             {
-                logger.Info($"Key:appKey1 Value:{applicationContext["appKey1"]}");
-                logger.Info($"Key:appKey2 Value:{applicationContext["appKey2"]}");
+                logger.Info($"Key:appKey1 Value:{ApplicationContext["appKey1"]}");
+                logger.Info($"Key:appKey2 Value:{ApplicationContext["appKey2"]}");
             }
 
-            applicationContext["appKey3"] = "appValue3";
+            ApplicationContext["appKey3"] = "appValue3";
 
-            base.RegisterExternalServices(builder, applicationContext);
+            base.RegisterExternalServices(builder);
         }
 
         protected override void RegisterAssemblyServices(ContainerBuilder builder)

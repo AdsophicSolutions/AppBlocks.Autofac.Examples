@@ -10,7 +10,7 @@ namespace AppBlocks.Autofac.Examples.AppBlocksApplication
 
         protected override void RegisterAssemblyServices(ContainerBuilder builder)
         {
-            RegisterModule(builder, new AppBlocksModuleImpl());
+            builder.RegisterModule(new AppBlocksModuleImpl(this));
             RegisterAssembly(typeof(ApplicationContainerBuilder).Assembly, builder);
         }
     }

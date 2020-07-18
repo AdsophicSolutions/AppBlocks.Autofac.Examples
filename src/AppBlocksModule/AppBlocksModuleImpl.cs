@@ -8,17 +8,20 @@ namespace AppBlocks.Autofac.Examples.AppBlocksModule
 {
     public class AppBlocksModuleImpl : AppBlocksModuleBase
     {
-        protected override void RegisterExternalServices(ContainerBuilder builder,
-            IContext applicationContext)
+        public AppBlocksModuleImpl(AppBlocksContainerBuilder appBlocksContainerBuilder)
+            : base(appBlocksContainerBuilder) { }
+
+        protected override void RegisterExternalServices(ContainerBuilder builder)
         {
             var singleInstanceService = new SingleInstanceModuleService();
             RegisterAsSingleInstance(builder, singleInstanceService);
         }
 
-        protected override void RegisterAssemblyServices
-            (ContainerBuilder builder, AppBlocksContainerBuilder appBlocksContainerBuilder)
+        protected override void RegisterAssemblyServices(ContainerBuilder builder)
         {
-            RegisterAssembly(typeof(AppBlocksModuleImpl).Assembly, builder, appBlocksContainerBuilder);
+            RegisterAssembly(typeof(AppBlocksModuleImpl).Assembly, 
+                builder, 
+                AppBlocksContainerBuilder);
         }
     }
 }
