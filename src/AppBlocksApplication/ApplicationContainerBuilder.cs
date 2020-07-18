@@ -6,7 +6,8 @@ namespace AppBlocks.Autofac.Examples.AppBlocksApplication
 {
     internal class ApplicationContainerBuilder : AppBlocksContainerBuilder
     {
-        public ApplicationContainerBuilder() : base(AppBlocksApplicationMode.Live) { }
+        public ApplicationContainerBuilder(ApplicationConfiguration applicationConfiguration)
+            : base(applicationConfiguration, AppBlocksApplicationMode.Live) { }
 
         protected override void RegisterAssemblyServices(ContainerBuilder builder)
         {

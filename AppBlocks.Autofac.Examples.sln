@@ -13,17 +13,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidatorAndWorkflowWriter"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistrationControl", "src\RegistrationControl\RegistrationControl.csproj", "{BFD1573D-A480-411B-AB7A-44F21FADBF15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyedAndNamed", "src\KeyedAndNamed\KeyedAndNamed.csproj", "{7B36D947-79D3-4F8E-8402-F6B413F9581C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyedAndNamed", "src\KeyedAndNamed\KeyedAndNamed.csproj", "{7B36D947-79D3-4F8E-8402-F6B413F9581C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationContext", "src\ApplicationContext\ApplicationContext.csproj", "{59ECD724-7F63-4A6D-9F74-538E51B83999}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationContext", "src\ApplicationContext\ApplicationContext.csproj", "{59ECD724-7F63-4A6D-9F74-538E51B83999}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatRSupport", "src\MediatRSupport\MediatRSupport.csproj", "{FA187234-D8E2-43F5-BF78-8F1317328AF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatRSupport", "src\MediatRSupport\MediatRSupport.csproj", "{FA187234-D8E2-43F5-BF78-8F1317328AF9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{31D61087-602F-49C8-B21B-F11AEF0AF984}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppBlocksApplication", "src\AppBlocksApplication\AppBlocksApplication.csproj", "{AA7FC93F-6D1A-4686-B578-BD52116CAF90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppBlocksApplication", "src\AppBlocksApplication\AppBlocksApplication.csproj", "{AA7FC93F-6D1A-4686-B578-BD52116CAF90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppBlocksModule", "src\AppBlocksModule\AppBlocksModule.csproj", "{8F4F3C62-E0CA-480C-A0B5-9A7745967D47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppBlocksModule", "src\AppBlocksModule\AppBlocksModule.csproj", "{8F4F3C62-E0CA-480C-A0B5-9A7745967D47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppBlocksLoggingModule", "src\AppBlocksLoggingModule\AppBlocksLoggingModule.csproj", "{7F6CD064-A47B-435B-B963-002DC0F785B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,10 @@ Global
 		{8F4F3C62-E0CA-480C-A0B5-9A7745967D47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F4F3C62-E0CA-480C-A0B5-9A7745967D47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F4F3C62-E0CA-480C-A0B5-9A7745967D47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F6CD064-A47B-435B-B963-002DC0F785B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F6CD064-A47B-435B-B963-002DC0F785B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F6CD064-A47B-435B-B963-002DC0F785B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F6CD064-A47B-435B-B963-002DC0F785B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +84,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{AA7FC93F-6D1A-4686-B578-BD52116CAF90} = {31D61087-602F-49C8-B21B-F11AEF0AF984}
 		{8F4F3C62-E0CA-480C-A0B5-9A7745967D47} = {31D61087-602F-49C8-B21B-F11AEF0AF984}
+		{7F6CD064-A47B-435B-B963-002DC0F785B6} = {31D61087-602F-49C8-B21B-F11AEF0AF984}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {30802D3B-3D05-4543-9632-3D267074781F}
