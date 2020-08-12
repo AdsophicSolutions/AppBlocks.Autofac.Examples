@@ -15,7 +15,7 @@ namespace AppBlocks.Autofac.Examples.RegistrationControl
         }
 
         protected override bool ShouldRegisterService(Type type, 
-            AppBlocksServiceAttributeBase serviceAttribute)
+            AppBlocksServiceBaseAttribute serviceAttribute)
         {
             if (type.FullName == "AppBlocks.Autofac.Examples.RegistrationControl.FilteredOutService") 
                 return false;

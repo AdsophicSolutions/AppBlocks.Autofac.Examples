@@ -15,16 +15,11 @@
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.5" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.5" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.5" />
+    <PackageReference Include="AppBlocks.Autofac" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AppBlocksModule\AppBlocksModule.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="AppBlocks.Autofac">
-      <HintPath>..\..\DLLs\AppBlocks.Autofac.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>
