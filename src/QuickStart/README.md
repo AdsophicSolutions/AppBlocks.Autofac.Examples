@@ -17,4 +17,4 @@ Every AppBlocks.Autofac application must define a class that inherits from AppBl
 Defines the sample service interface with a single method Run
 
 ### Service.cs
-Implementation for IService attributed with AppBlocksService attribute. This attribute informs the AppBlocks.Autofac framework to register the class as a Autofac container service. The AppBlocksService attribute without and parameters will default to registering the service as an implementation of the IService interface. Meaning that an instance of this class is provided when [Dependency](https://en.wikipedia.org/wiki/Dependency_injection) for the IService is defined.
+Implementation for IService attributed with AppBlocksService attribute. This attribute informs the AppBlocks.Autofac framework to register the class as a Autofac container service. The AppBlocksService attribute without any parameters will default to registering the service as an implementation of the IService interface. Meaning that an instance of this class is provided when [Dependency](https://en.wikipedia.org/wiki/Dependency_injection) for the IService is defined.
