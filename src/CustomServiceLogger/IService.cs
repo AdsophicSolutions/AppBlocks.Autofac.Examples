@@ -2,6 +2,6 @@
 {
     public interface IService
     {
-        void Run();
+        int Run();
     }
 }

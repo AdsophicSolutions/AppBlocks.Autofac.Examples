@@ -24,7 +24,9 @@ namespace AppBlocks.Autofac.Examples.CustomServiceLogger
         public void PostMethodInvocationLog(IInvocation invocation)
         {
             if (logger.IsInfoEnabled)
-                logger.Info($"Custom Service Logger {nameof(ServiceLogger)}.{nameof(PostMethodInvocationLog)} for {nameof(Service)}");
+                logger.Info($"Custom Service Logger " +
+                    $"{nameof(ServiceLogger)}.{nameof(PostMethodInvocationLog)} for {nameof(Service)}." +
+                    $" Return value is {invocation.ReturnValue}");
         }
     }
 }

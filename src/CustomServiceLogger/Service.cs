@@ -10,9 +10,10 @@ namespace AppBlocks.Autofac.Examples.CustomServiceLogger
         private static readonly ILog logger =
             LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        public void Run()
+        public int Run()
         {
             if (logger.IsDebugEnabled) logger.Debug($"{nameof(Service)} Run() called");
+            return 1;
         }
     }
 }
