@@ -12,7 +12,7 @@ Samples for AppBlocks.Autofac project. Use this project as reference to use AppB
 8. MediatR Support - [Link](https://github.com/AdsophicSolutions/AppBlocks.Autofac.Examples/tree/master/src/MediatRSupport)
 9. Modules - [Link](https://github.com/AdsophicSolutions/AppBlocks.Autofac.Examples/tree/master/src/AppBlocksApplication)
 
-### Running examples
+## Running examples
 The best way to test the examples is navigating to the project directory in command prompt / powershell and running the command 
   
   dotnet run
