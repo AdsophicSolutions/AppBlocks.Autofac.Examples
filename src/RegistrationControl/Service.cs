@@ -12,7 +12,7 @@ namespace AppBlocks.Autofac.Examples.RegistrationControl
 
         public void Run()
         {
-            if (logger.IsDebugEnabled) logger.Debug($"{nameof(Service)} Run() called");
+            if (logger.IsInfoEnabled) logger.Info($"{nameof(Service)} Run() called");
         }
     }
 }
