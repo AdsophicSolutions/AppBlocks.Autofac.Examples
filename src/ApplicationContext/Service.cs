@@ -20,11 +20,15 @@ namespace AppBlocks.Autofac.Examples.ApplicationContext
 
         public void Run()
         {
-            if (logger.IsDebugEnabled) 
-                logger.Debug($"{nameof(Service)} Run() called");
+            if (logger.IsInfoEnabled) 
+                logger.Info($"{nameof(Service)} Run() called");
 
             if (logger.IsInfoEnabled)
+            {
+                logger.Info($"Key:appKey1 Value:{applicationContext["appKey1"]}");
+                logger.Info($"Key:appKey2 Value:{applicationContext["appKey2"]}");
                 logger.Info($"Key:appKey3 Value:{applicationContext["appKey3"]}");
+            }
         }
     }
 }
