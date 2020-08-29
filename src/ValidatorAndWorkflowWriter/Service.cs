@@ -17,8 +17,8 @@ namespace AppBlocks.Autofac.Examples.ValidatorAndWorkflowWriter
 
         public int Run(string parameter)
         {
-            if (logger.IsDebugEnabled) 
-                logger.Debug($"{nameof(Service)} Run() called with parameter {parameter}");
+            if (logger.IsInfoEnabled) 
+                logger.Info($"{nameof(Service)} Run() called with parameter {parameter}");
 
             return 0;
         }

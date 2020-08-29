@@ -26,7 +26,7 @@ namespace AppBlocks.Autofac.Examples.ValidatorAndWorkflowWriter
             // Workflow writer writes out information that call was completed
             // successfully
             if (logger.IsInfoEnabled)
-                logger.Info($"Call to {invocation.TargetType.FullName}.{invocation.Method} completed successfully");
+                logger.Info($"Call to {invocation.TargetType.FullName}.{invocation.Method} completed successfully. The return value is {invocation.ReturnValue}");
         }
     }
 }
