@@ -10,6 +10,9 @@ The Main method in program.cs configures log4Net.
 ### Example.cs
 The Run method creates an ApplicationContainerBuilder and initializes an Autofac lifetime scope and runs the service. 
 
+### ApplicationContainerBuilder.cs
+Every AppBlocks.Autofac application must define a class that inherits from AppBlocksContainerBuilder. This inherited class is used to configure application Autofac services and other entities. In this example, ApplicationContainerBuilder performs the task of registering Autofac services in the application assembly. 
+
 ### IService.cs
 Defines a service interface with a single method Run.
 
