@@ -10,4 +10,9 @@ Samples for AppBlocks.Autofac project. Use this project as reference to use AppB
 6. Registration Control - [Link](https://github.com/AdsophicSolutions/AppBlocks.Autofac.Examples/tree/master/src/RegistrationControl)
 7. Application Context - [Link](https://github.com/AdsophicSolutions/AppBlocks.Autofac.Examples/tree/master/src/ApplicationContext)
 8. MediatR Support - [Link](https://github.com/AdsophicSolutions/AppBlocks.Autofac.Examples/tree/master/src/MediatRSupport)
-8. Modules - [Link](https://github.com/AdsophicSolutions/AppBlocks.Autofac.Examples/tree/master/src/AppBlocksApplication)
+9. Modules - [Link](https://github.com/AdsophicSolutions/AppBlocks.Autofac.Examples/tree/master/src/AppBlocksApplication)
+
+## Running examples
+The best way to test the examples is navigating to the project directory in command prompt / powershell and running the command 
+  
+  dotnet run
