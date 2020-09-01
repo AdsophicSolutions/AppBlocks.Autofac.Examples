@@ -15,8 +15,8 @@ namespace AppBlocks.Autofac.Examples.AppBlocksModule
 
         public void RunModuleService()
         {
-            if (logger.IsDebugEnabled) 
-                logger.Debug($"{nameof(ModuleService)}.{nameof(RunModuleService)} called");
+            if (logger.IsInfoEnabled) 
+                logger.Info($"{nameof(ModuleService)}.{nameof(RunModuleService)} called");
         }
     }
 }

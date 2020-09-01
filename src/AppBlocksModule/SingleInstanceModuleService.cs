@@ -13,8 +13,8 @@ namespace AppBlocks.Autofac.Examples.AppBlocksModule
 
         public void Run()
         {
-            if (logger.IsDebugEnabled)
-                logger.Debug($"{nameof(SingleInstanceModuleService)}.{nameof(Run)} called");
+            if (logger.IsInfoEnabled)
+                logger.Info($"{nameof(SingleInstanceModuleService)}.{nameof(Run)} called");
         }
     }
 }

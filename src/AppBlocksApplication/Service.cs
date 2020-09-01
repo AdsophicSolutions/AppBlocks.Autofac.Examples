@@ -22,7 +22,7 @@ namespace AppBlocks.Autofac.Examples.AppBlocksApplication
 
         public void Run()
         {
-            if (logger.IsDebugEnabled) logger.Debug($"{nameof(Service)} Run() called");
+            if (logger.IsInfoEnabled) logger.Info($"{nameof(Service)} Run() called");
 
             moduleService.RunModuleService();
             singleInstanceModuleService.Run();
