@@ -27,7 +27,7 @@ Notification, Request, Response message classes.
 Implement INotificationHandler for Notification message. They are attributed with AppBlocksMediatrNotificationService. Notifications can be handled by multiple handlers. Notifications sent via MediatR implementation are handled here. 
 
 ### RequestResponseService.cs
-Registered as request handlers for Request message providing a response of type Response. Class implements interface IRequestHandler and is attributed with AppBlocksMediatrRequestService. Handle method is called via the MediatR implementation
+Registered as request handler for Request message providing a response of type Response. Class implements interface IRequestHandler and is attributed with AppBlocksMediatrRequestService. Handler is called via MediatR integration in AppBlocks.
 
 
 
