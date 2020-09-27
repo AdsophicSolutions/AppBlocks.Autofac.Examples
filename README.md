@@ -11,6 +11,7 @@ Samples for AppBlocks.Autofac project. Use this project as reference to use AppB
 7. Application Context - [Link](https://github.com/AdsophicSolutions/AppBlocks.Autofac.Examples/tree/master/src/ApplicationContext)
 8. MediatR Support - [Link](https://github.com/AdsophicSolutions/AppBlocks.Autofac.Examples/tree/master/src/MediatRSupport)
 9. Modules - [Link](https://github.com/AdsophicSolutions/AppBlocks.Autofac.Examples/tree/master/src/AppBlocksApplication)
+10. REST Api - [Link](https://github.com/AdsophicSolutions/AppBlocks.Autofac.Examples/tree/master/src/RestAPI)
 
 ## Running examples
 The best way to test the examples is navigating to the project directory in command prompt / powershell and running the command 
