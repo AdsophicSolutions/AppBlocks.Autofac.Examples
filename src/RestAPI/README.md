@@ -34,10 +34,10 @@ Every AppBlocks.Autofac application must define a class that inherits from AppBl
 Defines the weather service interface with a single method `GetWeatherForecasts`
 
 ### WeatherService.cs
-Implementation for IWeatherService attributed with AppBlocksService attribute. This attribute informs the AppBlocks.Autofac framework to register the class as a Autofac container service. The AppBlocksService attribute without any parameters will default to registering the service as an implementation of the IService interface. Meaning that an instance of this class is provided when [Dependency](https://en.wikipedia.org/wiki/Dependency_injection) for the IWeather is defined. 
+Implementation for `IWeatherService` attributed with `AppBlocksService` attribute. This attribute informs the AppBlocks.Autofac framework to register the class as a Autofac container service. The AppBlocksService attribute without any parameters will default to registering the service as an implementation of the IService interface. Meaning that an instance of this class is provided when [Dependency](https://en.wikipedia.org/wiki/Dependency_injection) for the `IWeatherService` is defined. 
 
 ### WeatherForecaseController.cs
-This class is generated when the project is created. We modify the default implementation by modifying the constructor to include `IWeatherService` parameter. When the controller is created it is injected with an implementation of this interface. The `Get` method is modified to call the `GetWeatherForecasts` on the interface implementation.
+This class is generated when the project is created. We modify the default implementation by updating the constructor to include `IWeatherService` parameter. When the controller is created it is injected with an implementation of this interface. The `Get` method is modified to call the `GetWeatherForecasts` on the interface implementation.
 
 ### log4net.config
-Logging configuration has been modified for this project to use a `FileAppender` instead of the `ConsoleAppender` used in other projects. 
+Logging configuration has been modified for this project to use a `FileAppender` instead of the `ConsoleAppender`. 
