@@ -5,6 +5,7 @@ RestAPI demonstrates how to integrate AppBlocks into a REST API project. This pr
 
 ## Note
 * Add Nuget reference to `Autofac.Extensions.DependencyInjection`
+* Set the project as the start up project and run using F5.
 
 ## Source Files
 
@@ -13,16 +14,30 @@ The Main method in program.cs configures log4Net. The method `CreateHostBuilder`
 ```
 .UseServiceProviderFactory(new AutofacServiceProviderFactory())
 ```
+to inject Autofac in the service pipeline
 
-
-### Example.cs
-The Run method creates an ApplicationContainerBuilder and initializes an Autofac lifetime scope and runs the service. 
+### Startup.cs
+Add a new method 
+```
+public void ConfigureContainer(ContainerBuilder builder)
+{
+    var containerBuilder = new ApplicationContainerBuilder();
+    containerBuilder.BuildContainer(builder);
+}
+```
+We also save a reference to `ILifetimeScope`. This is included for completeness but not used. 
 
 ### ApplicationContainerBuilder.cs
 Every AppBlocks.Autofac application must define a class that inherits from AppBlocksContainerBuilder. This inherited class is used to configure application Autofac services and other entities. In this example, ApplicationContainerBuilder performs the task of registering Autofac services in the application assembly. 
 
-### IService.cs
-Defines the sample service interface with a single method Run
+### IWeatherService.cs
+Defines the weather service interface with a single method `GetWeatherForecasts`
 
-### Service.cs
-Implementation for IService attributed with AppBlocksService attribute. This attribute informs the AppBlocks.Autofac framework to register the class as a Autofac container service. The AppBlocksService attribute without any parameters will default to registering the service as an implementation of the IService interface. Meaning that an instance of this class is provided when [Dependency](https://en.wikipedia.org/wiki/Dependency_injection) for the IService is defined.
+### WeatherService.cs
+Implementation for IWeatherService attributed with AppBlocksService attribute. This attribute informs the AppBlocks.Autofac framework to register the class as a Autofac container service. The AppBlocksService attribute without any parameters will default to registering the service as an implementation of the IService interface. Meaning that an instance of this class is provided when [Dependency](https://en.wikipedia.org/wiki/Dependency_injection) for the IWeather is defined. 
+
+### WeatherForecaseController.cs
+This class is generated when the project is created. We modify the default implementation by modifying the constructor to include `IWeatherService` parameter. When the controller is created it is injected with an implementation of this interface. The `Get` method is modified to call the `GetWeatherForecasts` on the interface implementation.
+
+### log4net.config
+Logging configuration has been modified for this project to use a `FileAppender` instead of the `ConsoleAppender` used in other projects. 
