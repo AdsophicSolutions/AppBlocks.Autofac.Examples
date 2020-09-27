@@ -1,8 +1,7 @@
 # Rest API 
 
 RestAPI demonstrates how to integrate AppBlocks into a REST API project. This project is created as a .NET Web REST API project. The project creates
-`<addr>` WeatherForecastController 
-by default.   Start projects gives you a quick introduction on using AppBlocks.Autofac. It demonstrates how to a create a single service using AppBlocks.Autofac. Build and run the service from command line to see results. You see will see aspect oriented logging in action. 
+`WeatherForecastController` by default.   Start projects gives you a quick introduction on using AppBlocks.Autofac. It demonstrates how to a create a single service using AppBlocks.Autofac. Build and run the service from command line to see results. You see will see aspect oriented logging in action. 
 
 ## Source Files
 
