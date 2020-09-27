@@ -9,7 +9,11 @@ RestAPI demonstrates how to integrate AppBlocks into a REST API project. This pr
 ## Source Files
 
 ### Program.cs
-The Main method in program.cs configures log4Net. We 
+The Main method in program.cs configures log4Net. The method `CreateHostBuilder` is updated to include the line 
+```
+.UseServiceProviderFactory(new AutofacServiceProviderFactory())
+```
+
 
 ### Example.cs
 The Run method creates an ApplicationContainerBuilder and initializes an Autofac lifetime scope and runs the service. 
