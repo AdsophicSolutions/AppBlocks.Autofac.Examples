@@ -1,5 +1,6 @@
 ﻿using AppBlocks.Autofac.Support;
 using log4net;
+using Microsoft.Extensions.Logging;
 using System.Reflection;
 
 namespace AppBlocks.Autofac.Examples.ValidatorAndWorkflowWriter
@@ -12,13 +13,16 @@ namespace AppBlocks.Autofac.Examples.ValidatorAndWorkflowWriter
         IsKeyed: false)]
     public class Service : IService
     {
-        private static readonly ILog logger =
-            LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private readonly ILogger<Service> logger;
+        public Service(ILogger<Service> logger)
+        {
+            this.logger = logger;
+        }
 
         public int Run(string parameter)
         {
-            if (logger.IsInfoEnabled) 
-                logger.Info($"{nameof(Service)} Run() called with parameter {parameter}");
+            if (logger.IsEnabled(LogLevel.Information)) 
+                logger.LogInformation($"{nameof(Service)} Run() called with parameter {parameter}");
 
             return 0;
         }

@@ -1,18 +1,22 @@
 ﻿using AppBlocks.Autofac.Support;
-using log4net;
-using System.Reflection;
+using Microsoft.Extensions.Logging;
 
 namespace AppBlocks.Autofac.Examples.CustomServiceLogger
 {
     [AppBlocksService]
     public class Service : IService
     {
-        private static readonly ILog logger =
-            LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private readonly ILogger<Service> logger;
+
+        public Service(ILogger<Service> logger)
+        {
+            this.logger = logger;
+        }
 
         public int Run()
         {
-            if (logger.IsDebugEnabled) logger.Debug($"{nameof(Service)} Run() called");
+            if (logger.IsEnabled(LogLevel.Information)) 
+                logger.LogInformation($"{nameof(Service)} Run() called");
             return 1;
         }
     }

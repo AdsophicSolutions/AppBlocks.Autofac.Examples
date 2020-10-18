@@ -1,30 +1,26 @@
 ﻿using AppBlocks.Autofac.Support;
 using Autofac.Features.Indexed;
-using log4net;
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
+using Microsoft.Extensions.Logging;
 
 namespace AppBlocks.Autofac.Examples.KeyedAndNamed
 {
     [AppBlocksService]
     public class KeyedServiceReceiver : IKeyedServiceReceiver
     {
-        private static readonly ILog logger =
-            LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
         private readonly IIndex<string, IKeyedService> keyedServices;
+        private readonly ILogger<KeyedServiceReceiver> logger;
 
-        public KeyedServiceReceiver(IIndex<string, IKeyedService> keyedServices)
+        public KeyedServiceReceiver(ILogger<KeyedServiceReceiver> logger, 
+            IIndex<string, IKeyedService> keyedServices)
         {
+            this.logger = logger;
             this.keyedServices = keyedServices;
         }
 
         public void RunKeyedServices()
         {
-            if (logger.IsInfoEnabled)
-                logger.Info($"{nameof(KeyedServiceReceiver)}.{nameof(RunKeyedServices)} called successfully");
+            if (logger.IsEnabled(LogLevel.Information))
+                logger.LogInformation($"{nameof(KeyedServiceReceiver)}.{nameof(RunKeyedServices)} called successfully");
 
             if(keyedServices.TryGetValue("KeyedService1", out IKeyedService keyedService))
                 keyedService.RunKeyedService();

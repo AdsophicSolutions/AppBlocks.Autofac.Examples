@@ -1,27 +1,28 @@
 ﻿using AppBlocks.Autofac.Common;
 using Autofac;
-using log4net;
-using System.Diagnostics.Tracing;
-using System.Reflection;
+using Microsoft.Extensions.Logging;
 
 namespace AppBlocks.Autofac.Examples.ApplicationContext
 {
     internal class ApplicationContainerBuilder : AppBlocksContainerBuilder
     {
-        private static readonly ILog logger =
-            LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private readonly static ILogger<ApplicationContainerBuilder> logger =
+            new Logger<ApplicationContainerBuilder>(AppBlocksLogging.Instance.GetLoggerFactory());
 
         public ApplicationContainerBuilder()
             : base(new ApplicationConfiguration("appsettings.json"),
-                  AppBlocksApplicationMode.Live) { }
+                  AppBlocksApplicationMode.Live) 
+        { 
+
+        }
 
         protected override void RegisterExternalServices(
             ContainerBuilder builder)
         {
-            if(logger.IsInfoEnabled)
+            if(logger.IsEnabled(LogLevel.Information))
             {
-                logger.Info($"Key:appKey1 Value:{ApplicationContext["appKey1"]}");
-                logger.Info($"Key:appKey2 Value:{ApplicationContext["appKey2"]}");
+                logger.LogInformation($"Key:appKey1 Value:{ApplicationContext["appKey1"]}");
+                logger.LogInformation($"Key:appKey2 Value:{ApplicationContext["appKey2"]}");
             }
 
             ApplicationContext["appKey3"] = "appValue3";

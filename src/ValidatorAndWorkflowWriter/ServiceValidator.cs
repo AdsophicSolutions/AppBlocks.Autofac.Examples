@@ -1,37 +1,36 @@
 ﻿using AppBlocks.Autofac.Common;
 using AppBlocks.Autofac.Support;
 using Castle.DynamicProxy;
-using log4net;
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
+using Microsoft.Extensions.Logging;
 
 namespace AppBlocks.Autofac.Examples.ValidatorAndWorkflowWriter
 {
     [AppBlocksValidatorService("AppBlocks.Autofac.Examples.ValidatorAndWorkflowWriter.Service")]
     public class ServiceValidator : IServiceValidator
     {
-        private static readonly ILog logger =
-            LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private readonly ILogger<ServiceValidator> logger;
+        public ServiceValidator(ILogger<ServiceValidator> logger)
+        {
+            this.logger = logger;
+        }
 
         public void ValidateInputParameters(IInvocation invocation)
         {
-            if(logger.IsInfoEnabled)
+            if(logger.IsEnabled(LogLevel.Information))
             {
-                logger.Info($"Validating input parameters for {invocation.Method.Name}");
+                logger.LogInformation($"Validating input parameters for {invocation.InvocationTarget.GetType().FullName}.{invocation.Method.Name}");
                 if((string)invocation.Arguments[0] == "hello world")
-                    logger.Info($"Parameter value hello world is valid");
+                    logger.LogInformation($"Parameter value hello world is valid");
             }
         }
 
         public void ValidateResult(IInvocation invocation)
         {
-            if (logger.IsInfoEnabled)
+            if (logger.IsEnabled(LogLevel.Information))
             {
-                logger.Info($"Validating return value for {invocation.Method.Name}");
+                logger.LogInformation($"Validating return value for {invocation.InvocationTarget.GetType().FullName}.{invocation.Method.Name}");
                 if ((int)invocation.ReturnValue == 0)
-                    logger.Info($"Return value is 0 is valid");                
+                    logger.LogInformation($"Return value is 0 is valid");                
             }
         }
     }

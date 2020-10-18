@@ -1,6 +1,5 @@
 ﻿using AppBlocks.Autofac.Support;
-using log4net;
-using System.Reflection;
+using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
 namespace AppBlocks.Autofac.Examples.CustomServiceLogger
@@ -8,14 +7,19 @@ namespace AppBlocks.Autofac.Examples.CustomServiceLogger
     [AppBlocksService]
     public class AsyncService : IAsyncService
     {
-        private static readonly ILog logger =
-            LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private readonly ILogger<AsyncService> logger;
+
+        public AsyncService(ILogger<AsyncService> logger)
+        {
+            this.logger = logger;
+        }
 
         public async Task<int> Run()
         {
             return await Task.Run(() =>
                 {
-                    if (logger.IsDebugEnabled) logger.Debug($"{nameof(Service)} Run() called");
+                    if (logger.IsEnabled(LogLevel.Information)) 
+                        logger.LogInformation($"{nameof(Service)} Run() called");
                     return 0;
                 });
         }

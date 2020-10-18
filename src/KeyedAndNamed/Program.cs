@@ -1,7 +1,7 @@
-﻿using log4net;
-using log4net.Config;
-using System.IO;
-using System.Reflection;
+﻿using AppBlocks.Autofac.Common;
+using Microsoft.Extensions.Logging;
+using Serilog;
+using System;
 
 namespace AppBlocks.Autofac.Examples.KeyedAndNamed
 {
@@ -9,10 +9,34 @@ namespace AppBlocks.Autofac.Examples.KeyedAndNamed
     {
         static void Main(string[] args)
         {
-            var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
-            XmlConfigurator.Configure(logRepository, new FileInfo("log4net.config"));
-
+            ConfigureLogging(args);
             new Example().Run();
+        }
+
+        private static void ConfigureLogging(string[] args)
+        {
+            // Use command line parameter seri to use serilog 
+            if ((args?.Length ?? 0) != 0 &&
+                            string.Equals(args[0], "seri", StringComparison.InvariantCultureIgnoreCase))
+            {
+
+                Log.Logger = new LoggerConfiguration()
+                                 .Enrich
+                                 .FromLogContext()
+                                 .WriteTo
+                                 .Console()
+                                 .CreateLogger();
+
+                var loggerFactory = LoggerFactory.Create(builder =>
+                {
+                    builder.AddSerilog();
+                }
+                );
+
+                AppBlocksLogging.Instance.SetLoggerFactory(loggerFactory);
+            }
+            else
+                AppBlocksLogging.Instance.UseLog4Net("log4net.config");
         }
     }
 }

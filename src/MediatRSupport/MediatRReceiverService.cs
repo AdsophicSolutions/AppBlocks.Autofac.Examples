@@ -1,23 +1,18 @@
 ﻿using AppBlocks.Autofac.Support;
-using log4net;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
+using Microsoft.Extensions.Logging;
 
 namespace AppBlocks.Autofac.Examples.MediatRSupport
 {
     [AppBlocksService]
     public class MediatRReceiverService : IMediatRReceiverService
     {
-        private static readonly ILog logger =
-            LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-
+        private readonly ILogger<MediatRReceiverService> logger;
         private IMediator Mediator { get; }
 
-        public MediatRReceiverService(IMediator mediator)
+        public MediatRReceiverService(ILogger<MediatRReceiverService> logger, IMediator mediator)
         {
+            this.logger = logger;
             Mediator = mediator;
         }
 
@@ -31,8 +26,8 @@ namespace AppBlocks.Autofac.Examples.MediatRSupport
 
             if (response.Output == "1")
             {
-                if (logger.IsInfoEnabled)
-                    logger.Info($"Received response in " +
+                if (logger.IsEnabled(LogLevel.Information))
+                    logger.LogInformation($"Received response in " +
                         $"{nameof(MediatRReceiverService)}.{nameof(RunRequest)}");
             }
         }
@@ -41,8 +36,8 @@ namespace AppBlocks.Autofac.Examples.MediatRSupport
         {
             var notification = new Notification { Message = "0" };
             
-            if (logger.IsInfoEnabled)
-                logger.Info($"Publishing notification in " +
+            if (logger.IsEnabled(LogLevel.Information))
+                logger.LogInformation($"Publishing notification in " +
                     $"{nameof(MediatRReceiverService)}.{nameof(RunNotification)}");
 
             Mediator.Publish(notification).GetAwaiter().GetResult();
