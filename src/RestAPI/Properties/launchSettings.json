@@ -11,6 +11,7 @@
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
+      "commandLineArgs": "seri",
       "launchBrowser": true,
       "launchUrl": "weatherforecast",
       "environmentVariables": {

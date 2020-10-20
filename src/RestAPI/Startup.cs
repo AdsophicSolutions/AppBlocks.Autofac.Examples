@@ -21,29 +21,13 @@ namespace AppBlocks.Autofac.Examples.RestAPI
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
-            //ConfigureLogging();            
+            Configuration = configuration;                  
         }
 
         public IConfiguration Configuration { get; }
 
         public ILifetimeScope AutofacContainer { get; private set; }
 
-        private void ConfigureLogging()
-        {
-            if (Program.LogMethod == "seri")
-            {
-                var loggerFactory = LoggerFactory.Create(builder =>
-                {
-                    builder.AddSerilog();
-                }
-                );
-
-                AppBlocksLogging.Instance.SetLoggerFactory(loggerFactory);
-            }
-            else
-                AppBlocksLogging.Instance.UseLog4Net("log4net.config");
-        }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -66,7 +50,7 @@ namespace AppBlocks.Autofac.Examples.RestAPI
                 app.UseDeveloperExceptionPage();
             }
 
-            AutofacContainer = app.ApplicationServices.GetAutofacRoot();
+            AutofacContainer = app.ApplicationServices.GetAutofacRoot();            
 
             app.UseHttpsRedirection();
 
