@@ -8,7 +8,7 @@ Example demonstrates two features of AppBlocks. One, it supports dynamically loa
 This is the startup project.
 
 ### Program.cs
-The Main method in program.cs configures logging. The default implementation uses log4net. Pass command line parameter seri to use serilog instead.
+The ConfigureLogging method in program.cs configures logging. The default implementation uses log4net. Pass command line parameter seri to use serilog instead.  
 
 ### Example.cs
 Creates an instance of ApplicationConfiguration initialized with appsettings.json.  Next, creates an ApplicationContainerBuilder and passes the instance of ApplicationConfiguration and initializes an Autofac lifetime scope and runs the service. 
