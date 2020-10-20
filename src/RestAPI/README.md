@@ -10,11 +10,11 @@ RestAPI demonstrates how to integrate AppBlocks into a REST API project. This pr
 ## Source Files
 
 ### Program.cs
-The Main method in program.cs configures log4Net. The method `CreateHostBuilder` is updated to include the line 
+The Main method in program.cs configures logging. The default implementation uses log4net. Pass command line parameter seri to use serilog instead.. The method `CreateHostBuilder` is updated to include the line 
 ```
 .UseServiceProviderFactory(new AutofacServiceProviderFactory())
 ```
-to inject Autofac in the service pipeline
+to inject Autofac in the service pipeline. The method ConfigureLogging adds logging to Asp.NET core logging builder. 
 
 ### Startup.cs
 Add a new method 
