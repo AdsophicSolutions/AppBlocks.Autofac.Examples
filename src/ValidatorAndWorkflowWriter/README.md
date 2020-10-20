@@ -5,7 +5,7 @@ Example introduces the concept of declaring validator and workflow writers. Vali
 ## Source Files
 
 ### Program.cs
-The Main method in program.cs configures logging. The default implementation uses log4net. Pass command line parameter seri to use serilog instead. 
+The ConfigureLogging method in program.cs configures logging. The default implementation uses log4net. Pass command line parameter seri to use serilog instead.  
 
 ### Example.cs
 The Run method creates an ApplicationContainerBuilder and initializes an Autofac lifetime scope and runs the service. 
