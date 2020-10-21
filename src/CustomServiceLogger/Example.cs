@@ -14,7 +14,7 @@ namespace AppBlocks.Autofac.Examples.CustomServiceLogger
             service.Run();
 
             var asyncService = scope.Resolve<IAsyncService>();
-            asyncService.Run();
+            var result = asyncService.Run().GetAwaiter().GetResult();
         }
     }
 }

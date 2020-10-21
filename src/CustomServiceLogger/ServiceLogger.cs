@@ -2,6 +2,7 @@
 using AppBlocks.Autofac.Support;
 using Castle.DynamicProxy;
 using Microsoft.Extensions.Logging;
+using System.Linq;
 
 namespace AppBlocks.Autofac.Examples.CustomServiceLogger
 {

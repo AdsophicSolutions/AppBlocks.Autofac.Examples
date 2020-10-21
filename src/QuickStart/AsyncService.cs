@@ -1,8 +1,11 @@
 ﻿using AppBlocks.Autofac.Support;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace AppBlocks.Autofac.Examples.CustomServiceLogger
+namespace AppBlocks.Autofac.Examples.QuickStart
 {
     [AppBlocksService]
     public class AsyncService : IAsyncService
@@ -17,11 +20,11 @@ namespace AppBlocks.Autofac.Examples.CustomServiceLogger
         public async Task<int> Run()
         {
             return await Task.Run(() =>
-                {
-                    if (logger.IsEnabled(LogLevel.Information)) 
-                        logger.LogInformation($"{nameof(Service)} Run() called");
-                    return 1;
-                });
+            {
+                if (logger.IsEnabled(LogLevel.Information))
+                    logger.LogInformation($"{nameof(Service)}.{nameof(Run)} called");
+                return 2;
+            });
         }
     }
 }

@@ -12,6 +12,9 @@ namespace AppBlocks.Autofac.Examples.QuickStart
             using var scope = autofacContainer.BeginLifetimeScope();
             var service = scope.Resolve<IService>();
             service.Run();
+
+            var asyncService = scope.Resolve<IAsyncService>();
+            var result = asyncService.Run().GetAwaiter().GetResult();
         }
     }
 }
