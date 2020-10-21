@@ -11,17 +11,22 @@ namespace AppBlocks.Autofac.Examples.RestAPI.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<WeatherForecastController> logger;
         private readonly IWeatherService weatherService;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger, 
             IWeatherService weatherService)
         {
-            _logger = logger;
+            this.logger = logger;
             this.weatherService = weatherService;
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get() => weatherService.GetWeatherForecasts();
+        public IEnumerable<WeatherForecast> Get()
+        {
+            if (logger.IsEnabled(LogLevel.Information))
+                logger.LogInformation($"Called {nameof(WeatherForecastController)}.{nameof(Get)}");
+            return weatherService.GetWeatherForecasts();
+        }
     }
 }

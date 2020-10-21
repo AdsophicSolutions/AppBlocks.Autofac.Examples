@@ -1,11 +1,6 @@
 ﻿using AppBlocks.Autofac.Support;
-using Autofac.Features.Indexed;
-using log4net;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
+using Microsoft.Extensions.Logging;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -14,8 +9,12 @@ namespace AppBlocks.Autofac.Examples.MediatRSupport
     [AppBlocksMediatrNotificationService]
     public class NotificationService1 : INotificationHandler<Notification>
     {
-        private static readonly ILog logger =
-            LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private readonly ILogger<NotificationService1> logger;
+
+        public NotificationService1(ILogger<NotificationService1> logger)
+        {
+            this.logger = logger;
+        }
 
         public Task Handle(Notification notification,
             CancellationToken cancellationToken)
@@ -24,8 +23,8 @@ namespace AppBlocks.Autofac.Examples.MediatRSupport
             {
                 if (notification.Message == "0")
                 {
-                    if (logger.IsInfoEnabled)
-                        logger.Info($"{nameof(NotificationService1)}.{nameof(Handle)} Received message {notification.Message}");
+                    if (logger.IsEnabled(LogLevel.Information))
+                        logger.LogInformation($"{nameof(NotificationService1)}.{nameof(Handle)} Received message {notification.Message}");
                 }
             });
         }

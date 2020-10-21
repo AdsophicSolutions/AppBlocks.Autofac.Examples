@@ -1,4 +1,7 @@
-﻿using log4net;
+﻿using AppBlocks.Autofac.Common;
+using Castle.Core.Logging;
+using log4net;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -8,13 +11,13 @@ namespace AppBlocks.Autofac.Examples.AppBlocksModule
 {
     public class SingleInstanceModuleService
     {
-        private static readonly ILog logger =
-            LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private readonly ILogger<SingleInstanceModuleService> logger = 
+            new Logger<SingleInstanceModuleService>(AppBlocksLogging.Instance.GetLoggerFactory());
 
         public void Run()
         {
-            if (logger.IsInfoEnabled)
-                logger.Info($"{nameof(SingleInstanceModuleService)}.{nameof(Run)} called");
+            if (logger.IsEnabled(LogLevel.Information))
+                logger.LogInformation($"{nameof(SingleInstanceModuleService)}.{nameof(Run)} called");
         }
     }
 }

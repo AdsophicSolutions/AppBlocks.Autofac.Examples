@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AppBlocks.Autofac.Common;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
@@ -12,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace AppBlocks.Autofac.Examples.RestAPI
 {
@@ -19,12 +21,13 @@ namespace AppBlocks.Autofac.Examples.RestAPI
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            Configuration = configuration;                  
         }
 
         public IConfiguration Configuration { get; }
 
         public ILifetimeScope AutofacContainer { get; private set; }
+
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -47,7 +50,7 @@ namespace AppBlocks.Autofac.Examples.RestAPI
                 app.UseDeveloperExceptionPage();
             }
 
-            AutofacContainer = app.ApplicationServices.GetAutofacRoot();
+            AutofacContainer = app.ApplicationServices.GetAutofacRoot();            
 
             app.UseHttpsRedirection();
 

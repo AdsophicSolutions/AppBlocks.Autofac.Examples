@@ -1,32 +1,32 @@
 ﻿using AppBlocks.Autofac.Common;
 using AppBlocks.Autofac.Support;
 using Castle.DynamicProxy;
-using log4net;
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
+using Microsoft.Extensions.Logging;
 
 namespace AppBlocks.Autofac.Examples.AppBlocksLoggingModule
-{   
+{
 
     [AppBlocksLoggerService("AppBlocks.Autofac.Examples.AppBlocksModule.ModuleService")]
     public class ModuleServiceLogger : IServiceLogger
     {
-        private static readonly ILog logger =
-            LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private readonly ILogger<ModuleServiceLogger> logger;
+
+        public ModuleServiceLogger(ILogger<ModuleServiceLogger> logger)
+        {
+            this.logger = logger;
+        }
 
         public void PreMethodInvocationLog(IInvocation invocation)
         {
-            if (logger.IsInfoEnabled)
-                logger.Info($"Custom Service Logger " +
+            if (logger.IsEnabled(LogLevel.Information))
+                logger.LogInformation($"Custom Service Logger " +
                     $"{nameof(ModuleServiceLogger)}.{nameof(PreMethodInvocationLog)} for ModuleService");
         }
 
         public void PostMethodInvocationLog(IInvocation invocation)
         {
-            if (logger.IsInfoEnabled)
-                logger.Info($"Custom Service Logger " +
+            if (logger.IsEnabled(LogLevel.Information))
+                logger.LogInformation($"Custom Service Logger " +
                     $"{nameof(ModuleServiceLogger)}.{nameof(PostMethodInvocationLog)} for ModuleService");
         }
     }
