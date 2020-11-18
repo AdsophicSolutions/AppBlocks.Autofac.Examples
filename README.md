@@ -23,6 +23,8 @@ Projects depend on NuGet packages
 The best way to test the examples is navigating to the project directory in command prompt / powershell and running the command 
   
   dotnet run
+  
   or
+  
   dotnet run seri
   
