@@ -1,6 +1,12 @@
 # Examples for AppBlocks.Autofac
 Samples for AppBlocks.Autofac project. Use this project as reference to use AppBlocks.Autofac. Suggest going through these samples in the following order.
 
+## Note
+Projects depend on NuGet packages
+1. Serilog
+2. Serilog.Extensions.Logging
+3. Serilog.Sinks.Console
+
 ## Suggested Order of Projects
 1. Quick Start - [Link](https://github.com/AdsophicSolutions/AppBlocks.Autofac.Examples/tree/master/src/QuickStart)
 2. Service Dependency Injection - [Link](https://github.com/AdsophicSolutions/AppBlocks.Autofac.Examples/tree/master/src/ServiceDependencyInjection)
@@ -17,3 +23,6 @@ Samples for AppBlocks.Autofac project. Use this project as reference to use AppB
 The best way to test the examples is navigating to the project directory in command prompt / powershell and running the command 
   
   dotnet run
+  or
+  dotnet run seri
+  
