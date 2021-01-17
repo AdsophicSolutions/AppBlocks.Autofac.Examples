@@ -2,6 +2,9 @@
 
 Quick Start projects gives you a quick introduction on using AppBlocks.Autofac. It demonstrates how to a create a single service using AppBlocks.Autofac. Build and run the service from command line to see results. You see will see aspect oriented logging in action both from a synchronous service method (IService interface) and asynchronous service method (IAsyncService interface)
 
+### NOTE: 
+Please make sure your log4net.config is configured to copy to output directory. 
+
 ## Source Files
 
 ### Program.cs
